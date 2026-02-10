@@ -1,17 +1,10 @@
 import { NavLink } from "react-router-dom";
 import "./StylistsPreview.scss";
 import FlairButton from "../ui/FlairButton";
+
 import expert1 from "../../assets/images/expert1.jpg";
 import expert2 from "../../assets/images/expert2.jpg";
 import expert3 from "../../assets/images/expert3.jpg";
-
-<div className="experts">
-  <img src={expert1} alt="Expert" />
-  <img src={expert2} alt="Expert" />
-  <img src={expert3} alt="Expert" />
-</div>
-
-
 
 const stylists = [
   {
@@ -52,7 +45,6 @@ const StylistsPreview = () => {
         <div className="stylists-grid">
           {stylists.map((stylist, index) => (
             <div className="stylist-card" key={index}>
-
               <div className="stylist-image">
                 <img
                   src={stylist.image}

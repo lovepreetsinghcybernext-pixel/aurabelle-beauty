@@ -13,7 +13,7 @@ const AdminLogin = () => {
     e.preventDefault();
 
     // TEMP credentials (replace later with API)
-    if (email === "admin@salon.com" && password === "admin123") {
+    if (email === "lovepreet@gmail.com" && password === "Lovepreet@123") {
       localStorage.setItem("isAdmin", "true");
       navigate("/admin");
     } else {

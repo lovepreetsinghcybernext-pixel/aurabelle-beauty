@@ -1,0 +1,79 @@
+@use "../../Styles/variables" as *;
+@use "../../Styles/mixins" as *;
+
+.hero {
+  background: linear-gradient(180deg,
+      $accent 0%,
+      $light 100%);
+}
+
+.hero-inner {
+  @include flex-center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Content */
+.hero-content {
+  max-width: 540px;
+
+  h1 {
+    margin-bottom: 20px;
+
+    .highlight {
+      color: $primary;
+    }
+  }
+
+  p {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+}
+
+h1.hero-title div {
+  display: inline;
+}
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+/* Image block */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  img {
+    aspect-ratio: 16/16;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}

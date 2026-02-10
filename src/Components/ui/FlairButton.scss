@@ -1,0 +1,75 @@
+@use "../../Styles/variables" as *;
+
+.flair-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  background: none;
+  border: none;
+
+  .button__label {
+    position: relative;
+    z-index: 2;
+    transition: color 0.2s ease;
+  }
+
+  .button__flair {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transform: scale(0);
+    transform-origin: 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 180%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+.flair-button.primary {
+  background: $primary;
+  color: $white;
+
+  .button__flair::before {
+    background: $secondary;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+/* =========================
+   OUTLINE BUTTON
+========================= */
+.flair-button.outline {
+  border: 2px solid $primary;
+  color: $primary;
+  background: transparent;
+
+  .button__flair::before {
+    background: $primary;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}

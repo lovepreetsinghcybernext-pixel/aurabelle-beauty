@@ -1,0 +1,119 @@
+// ------------------------------
+// Global Styles
+// ------------------------------
+@use "./variables" as *;
+@use "./mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $light;
+  color: $secondary;
+  font-family: $font-main;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+// Typography Defaults
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  color: $secondary;
+}
+
+h1 {
+  @include fluid-text(46px, 66px);
+}
+
+h2 {
+  @include fluid-text(28px, 40px);
+}
+
+p {
+  font-size: $body;
+  color: $gray;
+}
+
+// Layout Utility
+.container {
+  @include container;
+}
+
+// Buttons
+.btn {
+  @include button-base;
+
+  &.primary {
+    background: $gradient-primary;
+    color: $white;
+    box-shadow: $shadow-card;
+    font-weight: 600;
+    font-family: $font-main;
+    transition: all 0.5s;
+    font-size: $body;
+    border-radius: 50px;
+
+    &:hover {
+      opacity: 0.92;
+      background: $secondary;
+      color: $white;
+    }
+  }
+
+  &.outline {
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+    transition: all 0.5s;
+    font-size: $body;
+    border-radius: 50px;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
+// Image styling
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.error {
+    color: red !important;
+}
+// Section spacing
+section {
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+}
+
+.footer-sec {
+  display: none;
+}
+
+
+#root {
+    overflow-x: hidden;
+    margin-top: 80px;
+}

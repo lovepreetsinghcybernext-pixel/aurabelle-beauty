@@ -1,0 +1,53 @@
+@use "../Styles/variables" as *;
+
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: $light;
+}
+
+.login-box {
+  max-width: 420px;
+  margin: auto;
+  background: $white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: $shadow-soft;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 25px;
+    color: $gray;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}

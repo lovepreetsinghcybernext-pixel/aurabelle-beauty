@@ -1,0 +1,90 @@
+@use "../../Styles/variables" as *;
+@use "../../Styles/mixins" as *;
+
+.stylists-page {
+  background: $light;
+}
+
+/* Header */
+.stylists-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+
+  p {
+    margin-top: 14px;
+  }
+}
+
+/* Grid */
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.stylist-card {
+  background: $white;
+  padding: 34px 28px;
+  border-radius: $radius;
+  text-align: center;
+  box-shadow: $shadow-soft;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-card;
+  }
+}
+
+/* Image Placeholder */
+.stylist-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  @include flex-center;
+
+  img {
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+/* Text */
+.role {
+  color: $primary;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.experience {
+  font-size: 14px;
+  color: $gray;
+  margin-bottom: 6px;
+}
+
+.specialty {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* CTA */
+.stylist-btn {
+  font-size: 14px;
+  padding: 10px 22px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stylists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stylists-grid {
+    grid-template-columns: 1fr;
+  }
+}

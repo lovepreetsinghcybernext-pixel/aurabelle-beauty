@@ -1,0 +1,170 @@
+@use "../../Styles/variables" as *;
+@use "../../Styles/mixins" as *;
+
+
+/* Header base */
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-soft;
+  width: 100%;
+}
+
+/* Inner layout */
+.header-inner {
+  @include flex-center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo */
+.logo img {
+    width: 170px;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  a {
+    text-decoration: none;
+    color: $secondary;
+    font-weight: 500;
+    position: relative;
+    transition: $transition;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $primary;
+      }
+    }
+  }
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    width: 24px;
+    height: 2px;
+    background: $secondary;
+    transition: $transition;
+  }
+
+  &.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* Mobile nav */
+.mobile-nav {
+  position: fixed;
+  width: 100%;
+  background: $light;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 24px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.site-header.menu-open .mobile-nav {
+  transform: translateX(0);
+}
+
+.mobile-nav a {
+  font-size: 20px;
+  font-weight: 500;
+  color: $secondary;
+  text-decoration: none;
+}
+
+.mobile-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.header-cta.desktop-nav a:after {
+    display: none;
+}
+
+
+.header-cta {
+  &.desktop-nav {
+    .btn {
+      &.active {
+        color: #fff;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+nav.nav.desktop-nav {
+  > a {
+    height: 1.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      height: 1.5em;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+      span {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

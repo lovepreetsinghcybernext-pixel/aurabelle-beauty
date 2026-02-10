@@ -1,0 +1,81 @@
+@use "../../Styles/variables" as *;
+
+.admin-card {
+  background: $white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: $shadow-soft;
+  overflow: auto;
+}
+
+/* Filters */
+.admin-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  select {
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+}
+
+/* Table */
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    font-weight: 600;
+    color: $secondary;
+  }
+}
+
+/* Status colors */
+.status {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+
+  &.pending {
+    background: #fff3cd;
+  }
+
+  &.confirmed {
+    background: #d1e7dd;
+  }
+
+  &.completed {
+    background: #cfe2ff;
+  }
+
+  &.cancelled {
+    background: #f8d7da;
+  }
+}
+
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  padding: 6px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #d9534f;
+    color: #fff;
+  }
+}

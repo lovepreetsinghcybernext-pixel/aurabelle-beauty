@@ -1,0 +1,96 @@
+@use "../../Styles/variables" as *;
+
+.services-split {
+  background: linear-gradient(180deg, $accent, $white);
+}
+
+.services-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.services-left {
+  position: sticky;
+  top: 140px;
+
+  h2 {
+    font-size: clamp(36px, 4vw, 48px);
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 17px;
+    color: $gray;
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+}
+
+/* RIGHT */
+.services-right {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* CARD */
+.service-item {
+  background: $white;
+  padding: 40px 42px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  position: relative;
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray;
+  }
+}
+
+/* NUMBER */
+.count {
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  width: 48px;
+  height: 48px;
+  background: $primary;
+  color: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .services-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .services-left {
+    position: relative;
+    top: 0;
+    text-align: center;
+
+    p {
+      margin: 0 auto 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .count {
+    left: 20px;
+  }
+}

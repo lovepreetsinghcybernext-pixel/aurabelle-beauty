@@ -1,0 +1,82 @@
+@use "../../Styles/variables" as *;
+@use "../../Styles/mixins" as *;
+
+.stylists-preview {
+  background: $accent;
+}
+
+/* Header */
+.stylists-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 60px;
+
+  p {
+    margin-top: 12px;
+  }
+}
+
+/* Grid */
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.stylist-card {
+  background: $white;
+  border-radius: $radius;
+  padding: 28px;
+  text-align: center;
+  box-shadow: $shadow-soft;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-card;
+  }
+
+  h3 {
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+}
+
+/* Image placeholder */
+.stylist-image {
+  height: 240px;
+  border-radius: $radius;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 155, 123, 0.3),
+    rgba(200, 155, 123, 0.1)
+  );
+  @include flex-center;
+  font-family: $font-heading;
+  color: $secondary;
+}
+
+/* Text */
+.role {
+  font-weight: 500;
+  color: $primary;
+}
+
+.exp {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* CTA */
+.stylists-cta {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stylists-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,34 @@
+// ------------------------------
+// Mixins
+// ------------------------------
+
+@use "./variables" as *;
+
+// Responsive font scaling
+@mixin fluid-text($min-size, $max-size) {
+  font-size: clamp(#{$min-size}, 2vw, #{$max-size});
+}
+
+// Center flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Container
+@mixin container {
+  width: 90%;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+// Button base styles
+@mixin button-base {
+  padding: 14px 32px;
+  border-radius: $radius;
+  font-weight: 600;
+  transition: $transition;
+  cursor: pointer;
+  border: none;
+}

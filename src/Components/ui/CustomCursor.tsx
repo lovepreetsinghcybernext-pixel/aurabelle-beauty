@@ -12,7 +12,8 @@ const CustomCursor = () => {
   const pos = useRef({ x: 0, y: 0 });
 
   const [visible, setVisible] = useState(true);
-  const [isPointer, setIsPointer] = useState(false);
+  const [isPointer] = useState(false);
+  //  const [isPointer, setIsPointer] = useState(false);
 
   useEffect(() => {
   const onMouseMove = (e: MouseEvent) => {

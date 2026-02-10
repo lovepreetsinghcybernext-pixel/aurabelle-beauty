@@ -5,11 +5,12 @@ import expert1 from "../../assets/images/expert1.jpg";
 import expert2 from "../../assets/images/expert2.jpg";
 import expert3 from "../../assets/images/expert3.jpg";
 
-<>
+<div className="experts">
   <img src={expert1} alt="Expert" />
   <img src={expert2} alt="Expert" />
   <img src={expert3} alt="Expert" />
-</>
+</div>
+
 
 
 const stylists = [
